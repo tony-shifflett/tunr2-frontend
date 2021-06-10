@@ -37,8 +37,8 @@ const HomePage = (props)=>{
              favoriteSongs={favoriteSongs}
              setFavoriteSongs={setFavoriteSongs} 
              songs={songs}/>
-             
-            <FavoriteList/>
+
+            <FavoriteList favoriteSongs={favoriteSongs}/>
         </>
     )
 }
