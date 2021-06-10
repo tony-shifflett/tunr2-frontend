@@ -5,6 +5,11 @@ const SongList = (props)=>{
     //destructure songs from props
     const { songs } = props
 
+    //handler funciton to add songs to favorite list
+    const handleAddFavorite =(song)=>{
+        props.setFavoriteSongs([...props.favoriteSongs, song])
+    }
+
     const loaded = ()=>(
         <div>
             {songs.map((song)=>(
@@ -13,6 +18,7 @@ const SongList = (props)=>{
                     <h3>{song.time}</h3>
                     <h3>{song.artist}</h3>
                     <h3>{song.favorite}</h3>
+                    <button onClick={()=>handleAddFavorite(song)}>Add Favorite</button>
                 </article>
             ))}
         </div>
@@ -24,7 +30,7 @@ const SongList = (props)=>{
             <article>
                 <h2>Song Title</h2>
                 <h3>Song PlayTime</h3>
-                <h3>Artist</h3>
+                <h3>Artist</h3>   
             </article>
         </div>
     )

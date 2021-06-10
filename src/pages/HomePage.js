@@ -25,7 +25,7 @@ const HomePage = (props)=>{
             .then((response) => response.json())
             .then((data) => setSongs(data))
             }
-
+        
         //get all songs on screen load
         useEffect(()=>{
             getSongs()
@@ -33,7 +33,11 @@ const HomePage = (props)=>{
 
     return (
         <>
-            <SongList songs={songs}/>
+            <SongList  
+             favoriteSongs={favoriteSongs}
+             setFavoriteSongs={setFavoriteSongs} 
+             songs={songs}/>
+             
             <FavoriteList/>
         </>
     )
